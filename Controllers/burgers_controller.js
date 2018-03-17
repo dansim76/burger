@@ -12,6 +12,7 @@ var router = express.Router();
             res.render("index",burgerObject)
         });
     })
+
     router.post("/burger",function(req,res){
         
         console.log(req.body);
@@ -24,11 +25,12 @@ var router = express.Router();
             // res.render("index")
         })
     })
-    router.put("/burger/:id",function(req,res){
+
+    router.put("/burger/:id", function(req,res){
         console.log('/burger/:id')
         var condition = "id =" + req.params.id;
         console.log(condition)
-        burger.updateOne({devoured:req.body.devoured}, condition, function(data){
+        burger.updateOne({devoured:1}, condition, function(data){
             //res.json(data)
             // res.redirect("/"); 
             if(data.changedRows ==0){
