@@ -22,13 +22,11 @@ function printQuestionMarks(num) {
         if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
-        // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-        // e.g. {sleepy: true} => ["sleepy=true"]
+        
         arr.push(key + "=" + value);
       }
     }
   
-    // translate array of strings to a single comma-separated string
     return arr.toString();
   }
   
