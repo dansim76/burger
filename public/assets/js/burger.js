@@ -21,7 +21,8 @@ $(function(){
         )
     });
     
-    $("#burgerdevoured").on("click", function(event){
+    $("#eatburger").on("click", function(event){
+        event.preventDefault();
         console.log("burgerDevoured")
         var id = $(this).data("id");
         var newDevoured = $(this).data("newDevoured");

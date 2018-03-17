@@ -13,10 +13,14 @@ var router = express.Router();
         });
     })
     router.post("/burger",function(req,res){
-        console.log('/burger')
+        
         console.log(req.body);
-        burger.insertOne(["burger_name","devoured"],[req.body.burger_name,req.body.devoured],function(data){
-            res.redirect("index", null);
+        burger.insertOne(["burger_name","devoured"
+        ],[req.body.burger_name,req.body.devoured
+        ],function(data){
+            console.log(data)
+            res.json({id: data.insertId})
+            //res.redirect("index", null);
             // res.render("index")
         })
     })
@@ -25,8 +29,15 @@ var router = express.Router();
         var condition = "id =" + req.params.id;
         console.log(condition)
         burger.updateOne({devoured:req.body.devoured}, condition, function(data){
-            res.json(data)
+            //res.json(data)
             // res.redirect("/"); 
+            if(data.changedRows ==0){
+                return res.status(404).end();
+
+            }else{
+                res.status(200).end();
+            }
+            //res.json({id:data.insertId})
         })
     })
 //needs burger put and updateone function

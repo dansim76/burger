@@ -13,7 +13,7 @@
                                     {{id}}.{{burger_name}}
                                 </li>
                                 {{!-- <input type="hidden" name="devoured" value="1">  --}}
-                                <button id="burgerdevoured" data-id="{{id}}" data-new-devoured="{{devoured}}">devour</button>
+                                <button id="eatburger" data-id="{{id}}" data-new-devoured="{{devoured}}">devour</button>
                             {{!-- </form> --}}
                         </div>    
                     {{/unless}}    
@@ -34,7 +34,7 @@
         </ul>
     </div>
     <div>
-        <form class ="create-form" action ="/burger" method="POST">
+        <form class ="create-form" >
                 <div class="form-group">
                         <label for="specficid">Burger</label>
                         <input type="text" class="form-control" id="name" >
