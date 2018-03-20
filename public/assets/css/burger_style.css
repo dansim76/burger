@@ -1,6 +1,9 @@
-.body{
-background:yellow;
+.container{
+background: #ffff66;
 
 
 
+}
+.jumbotron{
+    background: #ffff99
 }

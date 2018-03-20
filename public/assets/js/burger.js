@@ -25,6 +25,7 @@ $(function(){
         event.preventDefault();
         console.log("burgerDevoured")
         var id = $(this).data("id");
+        
         var newDevoured = $(this).data("newDevoured");
         console.log(newDevoured);
         var newDevouredState ={
